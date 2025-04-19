@@ -1,0 +1,216 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos base (mobile-first) */
+body {
+    font-family: "Noto Sans", sans-serif;
+    background: #ccee66;
+    color: white;
+    padding: 10px 20px;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+    position: relative;
+}
+
+body::before {
+    content: '';
+    background: #202020;
+    position: absolute;
+    top: 0;
+    left: -160px;
+    transform: rotate(-70deg);
+    width: 150%;
+    height: 60%;
+    z-index: -1;
+}
+
+body::after {
+    content: 'Nike';
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 100px; /* Menor para mobile */
+    font-weight: bold;
+    opacity: 0.2;
+    z-index: 2;
+}
+
+
+
+.logo {
+    width: 60px; /* Menor para mobile */
+}
+
+h4 {
+    font-size: 24px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.botao-carrinho {
+    background: #a3be52;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+    transition: opacity 0.5s;
+    display: inline-block; /* Para centralizar */
+}
+
+.botao-carrinho:hover {
+    opacity: 0.7;
+}
+
+.imagem-tenis {
+    width: 100%; /* Ajusta à tela */
+    max-width: 400px; /* Limite para não crescer demais */
+    transform: rotate(-25deg);
+    filter: drop-shadow(15px 20px 20px #161616);
+    transition: transform 1s, opacity 1s;
+    display: block;
+    margin: 20px auto; /* Centraliza */
+}
+
+.troca-efeito {
+    opacity: 0;
+    transform: rotate(-25deg) translateY(-30px);
+}
+
+.caixa-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 80vh;
+    position: relative;
+    z-index: 2;
+}
+
+.caixa-texto {
+    max-width: 90%; /* Ajusta à tela */
+    margin-bottom: 20px;
+}
+
+.caixa-botoes {
+    display: flex;
+    gap: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.botoes {
+    width: 30px; /* Maior para acessibilidade */
+    height: 30px;
+    margin-top: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: solid;
+}
+
+.botoes:active {
+    opacity: 0.6;
+}
+
+.verde {
+    background: #ccee66;
+}
+
+.azul {
+    background: #58cced;
+}
+
+.rosa {
+    background: #ff9eb5;
+}
+
+
+/* Media Queries para telas maiores */
+@media screen and (min-width: 700px) {
+    body {
+        padding: 30px 80px;
+    }
+
+    body::before {
+        left: -600px;
+        transform: rotate(-70deg);
+        width: 100%;
+        height: 120%;
+    }
+
+    body::after {
+        font-size: 250px;
+        opacity: 0.8;
+        z-index: 2;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    h4 {
+        font-size: 30px;
+    }
+
+    h1 {
+        font-size: 80px;
+    }
+
+    p {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .botao-carrinho {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .imagem-tenis {
+        width: 800px;
+        max-width: none;
+        margin: 0;
+    }
+
+    .caixa-principal {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        height: 75vh;
+    }
+
+    .caixa-texto {
+        max-width: 500px;
+        margin-bottom: 0;
+    }
+
+    .caixa-botoes {
+        margin-top: 52px;
+    }
+
+    .botoes {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        padding: 20px 160px;
+    }
+}
